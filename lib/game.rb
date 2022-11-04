@@ -37,7 +37,7 @@ class Game
       player_object.name = gets.chomp
 
       puts 'Name cannot be empty. Please choose another name:' unless name_not_empty?(player_object.name)
-      puts 'Name already chosen. Please choose another name:' unless different_names?
+      puts 'Name already chosen. Please choose another name:' unless different_names? || order == 'first'
     end
   end
 
@@ -61,7 +61,7 @@ class Game
 
       puts 'Invalid choice. Please choose a valid character (a-z) or (A-Z):' unless char_symbol?(player_object.symbol)
 
-      puts "Character already chosen by #{@player1.name}. Please choose another character:" unless different_symbols?
+      puts "Character already chosen by #{@player1.name}. Please choose another character:" unless different_symbols? || player_object == @player1
     end
   end
 
